@@ -1,0 +1,26 @@
+// breakpoint
+// 0 - 600px:      Phone
+// 600 - 900px:    Tablet portrait
+// 900 - 1200px:   Tablet landscape
+// [1200 - 1800] is where our normal styles apply
+// 1800px + :      Big desktop
+
+//1em = 16px
+//for phone 600px/116px = 37.5em
+@mixin respondByBreakPoint($breakPoint) {
+    @if $breakPoint == phone {
+        @media only screen and (max-width: 37.5em) {@content};  //1em = 16px for phone 600px/16px = 37.5em
+    }
+
+    @if $breakPoint == tab-port {
+        @media only screen and (max-width: 56.25em) {@content}; // for tab-port 900px/16px
+    }
+
+    @if $breakPoint == tab-land {
+        @media only screen and (max-width: 75em) {@content }; // for tab-land 1200px/16px 75 
+    }
+
+    @if $breakPoint == big-desktop {
+        @media only screen and (min-width: 112.5em) {@content}; // for desktop 1800px/16px = 112.5 
+    }
+}

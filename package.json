@@ -1,0 +1,19 @@
+{
+  "name": "projectxy",
+  "version": "0.0.1",
+  "description": "projectxy for demo",
+  "main": "index.js",
+  "scripts": {
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "watch:sass": "node-sass sass/index.scss css/style.css -w",
+
+    "compile:sass": "node-sass sass/index.scss css/style.comp.css"
+
+  },
+  "author": "Prabin Shrestha",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

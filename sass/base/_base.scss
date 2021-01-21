@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+    @include respondByBreakPoint(tab-land) { // width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respondByBreakPoint(tab-port) { // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    
+    @include respondByBreakPoint(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16
+    }
+}
+
+body {
+    box-sizing: border-box;
+    // padding: 0 10rem;
+
+    // @include respond(tab-port) {
+    //     padding: 0;
+    // }
+}
+
+.container {
+    display: grid;
+    grid-template-rows: [row-1-start] 56vh [row-1-end row-2-start] 40rem [row-2-end row-3-start] 47rem  [row-3-end row-4-start] 22rem  [row-4-end];
+    grid-template-columns: [leftSidebar-start] 9.6rem [leftSidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end rightSidebar-start] 9.6rem [rightSidebar-end];
+
+    @include respondByBreakPoint(tab-land){
+        grid-template-columns: [leftSidebar-start] 8rem [leftSidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end rightSidebar-start] 8rem [rightSidebar-end];
+    }
+
+    @include respondByBreakPoint(tab-port){
+        grid-template-columns: [leftSidebar-start] 6rem [leftSidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end rightSidebar-start] 6rem [rightSidebar-end];
+    }
+
+    @include respondByBreakPoint(phone){
+        grid-template-rows: [row-1-start] 56vh [row-1-end row-2-start] 86rem [row-2-end row-3-start] 87rem  [row-3-end row-4-start] 40rem  [row-4-end];
+        grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    }
+
+
+}

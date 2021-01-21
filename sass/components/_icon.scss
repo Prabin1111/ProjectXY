@@ -1,0 +1,24 @@
+%icon-basic {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: $color-white;
+    margin: 0.2rem;
+}
+
+.social-media {
+    &__facebook {
+        @extend %icon-basic;
+    }
+
+    &__google-plus-logo {
+        @extend %icon-basic;
+    }
+
+    &__linkedin-logo {
+        @extend %icon-basic;
+    }
+
+    &__instagram {
+        @extend %icon-basic;
+    }
+}

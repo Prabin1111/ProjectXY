@@ -1,0 +1,101 @@
+/* width */
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.5rem grey; 
+    border-radius: 1rem;
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: rgb(94, 144, 148);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(33, 175, 69);
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color-black , 0.4);
+
+    &__body {
+        border-radius: 10px;
+        z-index: inherit;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-height: 60%;
+        width: 50%;
+        transform: translate(-50% , -50%);
+        background-color: white;
+        box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 
+                    0 24px 38px 3px rgba(0,0,0,.14), 
+                    0 9px 46px 8px rgba(0,0,0,.12);
+        transition: all .4s;
+        overflow-y: auto;
+    }
+}
+
+.dialog__header {
+    display: block;
+    padding: 2rem;
+    text-align: center;
+    background-color: $color-green-light;
+    border-bottom: 1px solid rgba($color-black, 0.8);
+
+    &__align--start {
+        text-align: start;
+    }
+
+    &__align--center {
+        text-align: center;
+    }
+
+    &__align--end {
+        text-align: end;
+    }
+}
+
+
+.dialog__action {
+    position: relative;
+    bottom: 0;
+    padding: 2rem;
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgba($color-black, 0.8);
+    &__align--start{
+        justify-content: flex-start;
+    }
+
+    &__align--space-between{
+        justify-content: space-between;
+    }
+
+    &__align--center {
+        justify-content: space-around;
+    }
+    
+    &__align--end{
+        justify-content: flex-end;
+    }
+
+    & > button {
+        width: max-content;  
+     }
+}

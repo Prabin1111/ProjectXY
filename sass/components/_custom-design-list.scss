@@ -1,0 +1,31 @@
+#arrow {
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+    margin-top: 40px;
+}
+
+.custom-ul {
+    list-style: none;
+
+    .custom-li {
+        position: relative;
+        margin-left: 1.5rem;
+        padding-bottom: 1rem;
+        color: $color-white;
+
+        &::before {
+            content: "";
+            position: absolute;
+            border-right: 0.1rem solid $color-white;
+            border-bottom: 0.2rem solid $color-white;
+            width: 0.5rem;
+            height: 0.5rem;
+            top: calc(50% - 0.7rem);
+            left: -1rem;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+}

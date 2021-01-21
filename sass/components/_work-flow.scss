@@ -1,0 +1,23 @@
+.work-flow {
+    &__container {
+        margin : 0 12rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+
+        @media  only screen  and (max-width: 82em)  { // 1315/16 = 82.1875
+            margin : 0 4rem;
+        } 
+
+        @include respondByBreakPoint(tab-land) { //from mixins
+            margin: 0;
+        }
+
+        @include respondByBreakPoint(phone) { //from mixins
+            grid-template-columns: 1fr;
+            grid-template-rows: 22rem 22rem 22rem;
+            align-items: flex-start;
+            margin: 0;
+        }
+    }
+}

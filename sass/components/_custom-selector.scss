@@ -1,0 +1,79 @@
+.select {
+    position: relative;
+    width: 25rem;
+    font-size: 1.5rem;
+
+    &__btn {
+        padding: 0.2rem;
+        box-sizing: border-box;
+        border-radius: 0.3rem;
+        width: 100%;
+        cursor: pointer;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: #fff;
+        border: 1px solid $color-black;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 45%;
+            right: 1.5rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            -webkit-transform: translateY(-50%) rotate(45deg);
+            transform: translateY(-50%) rotate(45deg);
+            border-right: 2px solid #666;
+            border-bottom: 2px solid #666;
+            transition: 0.2s ease;
+        }
+
+    }
+    &__Dropdown {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        border-radius: 0 0 0.3rem 0.3rem;
+        overflow: hidden;
+        border-top: 1px solid #eee;
+        z-index: 1;
+        background: #fff;
+        -webkit-transform: scale(1, 0);
+        transform: scale(1, 0);
+        -webkit-transform-origin: top center;
+        transform-origin: top center;
+        visibility: hidden;
+        transition: 0.2s ease;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+        .option {
+            padding: 0.2rem;
+            box-sizing: border-box;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba($color: $color-grey-light, $alpha: 0.5);
+                visibility: visible;
+                -webkit-transform: scale(1, 1);
+                transform: scale(1, 1);
+            }
+        }
+    }
+}
+
+.select .select__Btn.toggle {
+    border-radius: 3px 3px 0 0;
+}
+.select .select__Btn.toggle:after {
+    -webkit-transform: translateY(-50%) rotate(-135deg);
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.select .select__Dropdown.toggle {
+    visibility: visible;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  

@@ -1,0 +1,43 @@
+.header {
+    grid-column: full-start/full-end;
+    background-image: linear-gradient(rgba($color-black, 0.4), rgba($color-black, 0.4)), url(../img/header-image.jpg);
+    background-size: cover;
+    color: $color-white;
+    padding: 8rem;
+    padding-top: 2rem;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 3fr;
+
+    @include respondByBreakPoint(tab-land) {
+        padding: 6rem;
+        padding-top: 1.5rem;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 2fr;
+    }
+
+    @include respondByBreakPoint(tab-port) {
+        grid-template-rows: 1fr 4fr;
+        grid-template-columns: 2fr 1fr;
+
+        padding: 3rem 2rem 3rem 3rem;
+        background-image: linear-gradient(rgba($color-black, 0.4), rgba($color-black, 0.4)), url(../img/header-small.jpg);
+    }
+
+    
+    @include respondByBreakPoint(phone) {
+        grid-template-rows: 1fr 5fr;
+        grid-template-columns: 2fr 1fr;
+        padding: 1rem 3rem 1rem 5rem;
+    }
+
+    &__action-box {
+        justify-self: end;
+    }
+
+    &__text-box {
+        align-self: end;
+        max-width: 70rem;
+    }
+}

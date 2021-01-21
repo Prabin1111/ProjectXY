@@ -1,0 +1,204 @@
+%onCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%onX-axisCenter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.card {
+    margin: 1rem;
+    position: relative;
+
+    &__outer-circle {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        border: 0.5rem solid $color-black;
+        z-index: -1;
+        box-shadow: 0 0 0.5rem $color-black;
+        @extend %onX-axisCenter;
+
+        @include respondByBreakPoint(tab-land) {
+            border: 0.45rem solid $color-black;
+        }
+
+        @include respondByBreakPoint(tab-port) {
+            border: 0.35rem solid $color-black;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 3rem;
+            right: -1rem;
+            width: 3rem;
+            height: 8rem;
+            z-index: 9;
+            background-color: $color-white;
+
+            @include respondByBreakPoint(tab-land) {
+
+            }
+        }
+    }
+
+    &__inner-number-circle {
+        position: absolute;
+        right: 0rem;
+        top: 0rem;
+        z-index: 99999;
+        width: 6rem;
+        height: 6rem;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 0.5rem solid $color-white;
+        background-color: $color-yellow;
+        box-shadow: 0 0 10px $color-black;
+
+        &--green {
+            background-color: $color-green-light;
+        }
+
+        &--blue {
+            background-color: $color-blue;
+        }
+
+        &--yellow {
+            background-color: $color-yellow;
+        }
+    }
+
+    &__inner-main-circle {
+        @extend %onCenter;
+        z-index: 99;
+        width: 16rem;
+        height: 16rem;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: $color-white;
+        box-shadow: 0 0 3rem $color-black;
+
+        @include respondByBreakPoint(tab-land) {
+
+        }
+    }
+
+    &__number {
+        font-size: 3rem;
+        font-weight: 400;
+        text-align: center;
+        color: $color-black;
+    }
+
+    &__icon {
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    &__building__icon {
+        fill: $color-yellow;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    &__credential__icon {
+        fill: $color-blue;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    &__diagram__icon {
+        fill: $color-green-light;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    &__name {
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        &--green {
+            background-color: $color-green-light;
+        }
+
+        &--blue {
+            background-color: $color-blue;
+        }
+
+        &--yellow {
+            background-color: $color-yellow;
+        }
+    }
+
+    &__details {
+        font-size: 1rem;
+        text-align: center;
+        padding: 1rem 2.5rem;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 20%;
+        right: -6rem;
+
+        @include respondByBreakPoint(tab-land) {
+            top: 15%;
+            right: -4.5rem;
+        }
+
+        @include respondByBreakPoint(tab-port) {
+            top: 10%;
+            right: -4rem;
+        }
+
+        @media only screen and (max-width: 42em) { // 672/16px
+            top: 10%;
+            right: -2.5rem;
+        }
+
+
+
+        &__icon {
+            width: 6rem;
+            @include respondByBreakPoint(tab-land) {
+                width: 4.5rem;
+            }
+
+            @include respondByBreakPoint(tab-port) {
+                width: 4rem;
+            }
+
+            @media only screen and (max-width: 42em) { // 672/16px
+                width: 2.5rem;
+            }
+
+            
+        }
+    }
+}
+
+.underline {
+    position: relative;
+   &::after {
+       content: '';
+       position: absolute;
+       left: 50%;
+       bottom: -10%;
+       transform: translateX(-50%);
+       height: 0.3rem;
+       width: 10rem;
+       background-color: $color-black;
+   }
+}

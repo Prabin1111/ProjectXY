@@ -1,0 +1,27 @@
+.section {
+    &__work-flow{
+        grid-column: center-start/center-end;
+        grid-row: row-2-start / row-2-end;
+
+        @include respondByBreakPoint(tab-port) {
+            grid-column: full-start/full-end;
+        }
+
+        @include respondByBreakPoint(tab-port) {
+            grid-column: full-start/full-end;
+        }
+    }
+
+    &__form {
+        grid-column: full-start/full-end;
+        grid-row: row-3-start / row-3-end;
+        background-color: $color-grey-light;  
+    }
+
+    &__footer {
+        grid-column: full-start/full-end;
+        column-gap: 0.5rem;
+        grid-row: row-4-start / row-4-end;
+        background-color: $color-green-dark;  
+    }
+}

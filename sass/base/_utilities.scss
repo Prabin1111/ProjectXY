@@ -1,0 +1,53 @@
+.mb-sm {
+  margin-bottom: 2rem;
+}
+.mb-md {
+  margin-bottom: 3rem;
+}
+.mb-lg {
+  margin-bottom: 4rem;
+}
+.mb-hg {
+  margin-bottom: 8rem;
+}
+
+.mt-sm {
+  margin-top: 2rem;
+}
+.mt-md {
+  margin-top: 3rem;
+}
+.mt-lg {
+  margin-top: 4rem;
+}
+.mt-hg {
+  margin-top: 8rem;
+}
+
+.mr-sm {
+  margin-right: 2rem;
+}
+.mY-axis-md {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mX-axis-sm {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.filter__blur {
+  filter: blur(0.1rem);
+}
+
+.opacity {
+
+  &__md{
+    opacity: 0.5;
+  }
+}

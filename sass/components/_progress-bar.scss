@@ -1,0 +1,52 @@
+.progress-bar {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+
+    &--horizantal {
+        width: 40rem;
+        height: 1rem;
+    }
+
+    &--primary {
+        &::-moz-progress-bar {
+            background: $color-yellow;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        &::-webkit-progress-bar {
+            border-radius: 5px 5px 5px 5px;
+            background-color: #f7fafc;
+        }
+
+        &::-webkit-progress-value {
+            background: $color-yellow;
+            border-radius: 5px 5px 5px 5px;
+        }
+        background: $color-grey-dark;
+        border-radius: 8px;
+    }
+
+    &--complete {
+        &::-moz-progress-bar {
+            border-radius: 5px 5px 5px 5px;
+            background: $color-green-light;
+        }
+
+        &::-webkit-progress-bar {
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        &::-webkit-progress-value {
+            border-radius: 5px 5px 5px 5px;
+            background: $color-green-light;
+        }
+        background: $color-green-light;
+        border-radius: 8px;
+    }
+
+    &__label {
+        align-self: flex-start;
+        margin-left: 7rem;
+    }
+}
